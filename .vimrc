@@ -19,6 +19,9 @@ set nocompatible
 execute pathogen#infect()
 colorscheme base16-default
 set background=dark
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 " default script:
 
 " Attempt to determine the type of a file based on its name and possibly its
