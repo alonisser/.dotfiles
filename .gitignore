@@ -52,3 +52,6 @@ charles/
 examples.desktop
 setuptools-2.0.1.tar.gz
 
+.charles.config
+.oh-my-zsh/
+.profile
