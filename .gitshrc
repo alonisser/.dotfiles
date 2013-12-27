@@ -1,0 +1,1 @@
+eval "$(gh alias -s)"
