@@ -57,3 +57,15 @@ setuptools-2.0.1.tar.gz
 .profile
 binaries/
 .virtualenvs
+.dbshell
+.gem/
+.lesshst
+.mongorc.js
+.qws
+.rbenv/
+.rediscli_history
+.thunderbird
+Pictures
+Ubuntu One
+hs_err_pid9982.log
+tmp/
