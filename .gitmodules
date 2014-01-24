@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/vim-peepopen"]
 	path = .vim/bundle/vim-peepopen
 	url = git@github.com:shemerey/vim-peepopen.git
+[submodule ".vim/bundle/vim-skip"]
+	path = .vim/bundle/vim-skip
+	url = git@github.com:jayflo/vim-skip.git
