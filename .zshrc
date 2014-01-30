@@ -67,3 +67,5 @@ export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:/home/alon/.pyenv/shims
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+export WEBIDE_JDK=/opt/java
+alias ack=ack-grep

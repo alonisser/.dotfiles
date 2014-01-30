@@ -125,12 +125,12 @@ eval "$(pyenv init -)"
 export export RBENV_ROOT="/usr/local/rbenv"
 export export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"
-export WEBIDE_JDK=/opt/java/
-export PYCHARM_JDK=/opt/java/
+export WEBIDE_JDK=/opt/java
+export PYCHARM_JDK=/opt/java
 
 #my stuff
 alias cd..="cd .."
-alias ack="ack-grep"
+alias ack=ack-grep
 
 
 # added by travis gem
