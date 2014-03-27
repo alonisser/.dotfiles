@@ -69,3 +69,17 @@ Pictures
 Ubuntu One
 hs_err_pid9982.log
 tmp/
+server
+find_tutorial
+vagrant
+VirtualBox VMs
+images
+bootstrap.sh
+pgadmin.log
+pgadmin_historqueries
+.pg
+.python-version
+.speech-dispatcher
+.pgadmin_histoqueries .pgpass
+.pg*
+.PyCharm30
