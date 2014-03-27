@@ -67,7 +67,57 @@ set showcmd
 
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
-set hlsearch
+set hlsearch   " highlights search and remove highlight <f4>
+set incsearch   
+" Use case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+
+
+" Maps for jj to act as Esc in insert and command modes
+ino jj <esc>
+cno jj <c-c>
+
+" map leader to ,
+let mapleader=","
+
+" ==================================================
+" NERDTree
+" ==================================================
+
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+map <F3> :NERDTreeToggle<CR>
+
+" ==================================================
+" Omni Completion
+" ==================================================
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+" ==================================================
+" SuperTab
+" ==================================================
+
+let g:SuperTabDefaultCompletionType = "context"
+
+
+" ==================================================
+" CtrlP
+" ==================================================
+
+set wildignore+=*.so,*.swp,*.zip,*.pyc,*.pyo
+let g:ctrlp_custom_ignore = 'node_modules\|bower_components'
+
+" ==================================================
+" Ack
+" ==================================================
+
+nmap g/ :Ack<space>
+nmap g* :Ack -w <C-R><C-W><space>
+nmap ga :AckAdd!<space>
 
 " Modelines have historically been a source of security vulnerabilities. As
 " such, it may be a good idea to disable them and use the securemodelines
@@ -82,10 +132,6 @@ set hlsearch
 " change Vim's behaviour in ways which deviate from the true Vi way, but
 " which are considered to add usability. Which, if any, of these options to
 " use is very much a personal preference, but they are harmless.
-
-" Use case insensitive search, except when using capital letters
-set ignorecase
-set smartcase
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
@@ -164,6 +210,6 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
-
+noremap <F4> :set hlsearch! hlsearch?<CR>
 
 "------------------------------------------------------------
