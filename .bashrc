@@ -94,12 +94,13 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+if [ -f ~/.workstuff ]; then
+    . ~/.workstuff
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -125,13 +126,10 @@ eval "$(pyenv init -)"
 export export RBENV_ROOT="/usr/local/rbenv"
 export export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"
-export WEBIDE_JDK=/opt/java
-export PYCHARM_JDK=/opt/java
 
 #my stuff
 alias cd..="cd .."
-alias ack=ack-grep
-
 
 # added by travis gem
 [ -f /home/alon/.travis/travis.sh ] && source /home/alon/.travis/travis.sh
+

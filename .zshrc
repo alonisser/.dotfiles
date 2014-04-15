@@ -67,11 +67,9 @@ export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:/home/alon/.pyenv/shims
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export WEBIDE_JDK=/opt/java
-export PYCHARM_JDK=/opt/java
+source ~/.aliases
+source ~/.workstuff
  
-alias ack=ack-grep
 export export PYENV_ROOT="$HOME/.pyenv"
 export export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-

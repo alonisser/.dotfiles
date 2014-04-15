@@ -1,0 +1,12 @@
+alias ack=ack-grep
+export WEBIDE_JDK=/opt/java
+export PYCHARM_JDK=/opt/java
+
+# ps a process by name
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+# use mkdir to create parent folders if needed
+alias mkdir="mkdir -pv"
+
+# use history with grep for a complex history command search
+alias histg="history | grep"
