@@ -83,3 +83,7 @@ pgadmin_historqueries
 .pgadmin_histoqueries .pgpass
 .pg*
 .PyCharm30
+.workstuff
+.xinputrc
+Program.c
+create_sample_files.sh
