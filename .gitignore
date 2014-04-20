@@ -87,3 +87,7 @@ pgadmin_historqueries
 .xinputrc
 Program.c
 create_sample_files.sh
+.nano_history
+.gnupg
+.synaptic
+.FBReader/
