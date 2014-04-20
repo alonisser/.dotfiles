@@ -1,10 +1,7 @@
+" Mostly based on the example wikia file
 " URL: http://vim.wikia.com/wiki/Example_vimrc
-" Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
-" Description: A minimal, but feature rich, example .vimrc. If you are a
-"              newbie, basing your first .vimrc on this file is a good choice.
-"              If you're a more advanced user, building your own .vimrc based
-"              on this file is still a good idea.
-
+" plus meir krihali dotvim
+" https://github.com/MeirKriheli/dotvim/blob/master/vimrc
 "------------------------------------------------------------
 " Features {{{1
 "
@@ -16,10 +13,13 @@
 " mystuff:
 
 set nocompatible
-execute pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+" execute pathogen#infect()
 colorscheme base16-default
 set background=dark
 
+" map ctrl p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " default script:
@@ -28,21 +28,13 @@ let g:ctrlp_cmd = 'CtrlP'
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
 filetype indent plugin on
-
+filetype plugin on
 " Enable syntax highlighting
 syntax on
 
-
-"------------------------------------------------------------
-" Must have options {{{1
-"
-" These are highly recommended options.
-
-" Vim with default settings does not allow easy switching between multiple files
-" in the same editor window. Users can use multiple split windows or multiple
-" tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
-"
+" Keep swap files out of the working dir
+" Adjust if needed in another dir
+set directory=~/tmp
 " One such option is the 'hidden' option, which allows you to re-use the same
 " window and switch from an unsaved buffer without saving it first. Also allows
 " you to keep an undo history for multiple files when re-using the same window
@@ -73,6 +65,28 @@ set incsearch
 set ignorecase
 set smartcase
 
+" pairs
+set matchpairs+=<:>     " show matching <> (html mainly) as well
+set showmatch
+set matchtime=3
+set sm             
+
+" status line tweaking
+
+set statusline=%<%f\                     " Filename
+set statusline+=%w%h%m%r                 " Options
+set statusline+=%{fugitive#statusline()} " Git Hotness
+set statusline+=\ [%{&ff}/%Y]            " filetype
+set statusline+=\ [%{getcwd()}]          " current dir
+set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+
+" Columns and lines
+set colorcolumn=80
+
+if has("gui_running")
+    set lines=75
+    set columns=180
+endif
 
 " Maps for jj to act as Esc in insert and command modes
 ino jj <esc>
@@ -80,6 +94,12 @@ cno jj <c-c>
 
 " map leader to ,
 let mapleader=","
+" ==================================================
+" Python-mode lint overrules:
+"
+" ==================================================
+
+let g:pymode_lint_ignore = "W0611"
 
 " ==================================================
 " NERDTree
@@ -128,10 +148,6 @@ nmap ga :AckAdd!<space>
 "------------------------------------------------------------
 " Usability options {{{1
 "
-" These are options that users frequently set in their .vimrc. Some of them
-" change Vim's behaviour in ways which deviate from the true Vi way, but
-" which are considered to add usability. Which, if any, of these options to
-" use is very much a personal preference, but they are harmless.
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
@@ -211,5 +227,68 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 noremap <F4> :set hlsearch! hlsearch?<CR>
+" ==================================================
+" Window navigation
+" ==================================================
 
+" control + vim direction key to navigate windows
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
+" control + arrow key to navigate windows
+noremap <C-Down> <C-W>j
+noremap <C-Up> <C-W>k
+noremap <C-Left> <C-W>h
+noremap <C-Right> <C-W>l
+
+" <C-TAB> and <C-S-TAB> to switch buffers " in the current window
+noremap <C-TAB> :MBEbn<CR>
+noremap <C-S-TAB> :MBEbp<CR>
+"
+" ==================================================
+" Splits handling
+" ==================================================
+
+" Make these all work in insert mode
+imap <C-W> <C-O><C-W>
+
+" - and + to resize horizontal splits
+map - <C-W>-
+map + <C-W>+
+
+" alt-< or alt-> for vertical splits
+map <m-,> <C-W>>
+map <m-.> <C-W><
+
+" And for gnome terminal etc
+map , <C-W>>
+map . <C-W><
+
+" F2 close current split (window)
+noremap <F2> <Esc>:close<CR><Esc>
+
+
+" ==================================================
+" Right-to-Left (Hebrew etc) shortcuts
+" ==================================================
+
+" toggle direction mapping
+" this is useful for logical-order editing
+map <F9>   :set invrl<CR>
+" do it when in insert mode as well (and return to insert mode)
+imap <F9> <Esc>:set invrl<CR>a
+
+" toggle reverse insertion
+" this is useful for visual-order editing
+map <F8>   :set invrevins<CR>
+" do it when in insert mode as well (and return to insert mode)
+imap <F8> <Esc>:set invrevins<CR>a
+
+" Allow overrides via ~/.vim/vimrc.local
+if filereadable(expand("~/.vim/vimrc.local"))
+    source ~/.vim/vimrc.local
+endif
 "------------------------------------------------------------
+
