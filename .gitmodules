@@ -92,3 +92,6 @@
 [submodule ".vim/bundle/vim-snippets"]
 	path = .vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
+[submodule ".vim/bundle/vim-systemd-syntax"]
+	path = .vim/bundle/vim-systemd-syntax
+	url = git@github.com:Matt-Stevens/vim-systemd-syntax.git
