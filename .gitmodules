@@ -95,3 +95,6 @@
 [submodule ".vim/bundle/vim-systemd-syntax"]
 	path = .vim/bundle/vim-systemd-syntax
 	url = git@github.com:Matt-Stevens/vim-systemd-syntax.git
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git

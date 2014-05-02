@@ -13,7 +13,7 @@
 " mystuff:
 
 set nocompatible
-" call pathogen#runtime_append_all_bundles()
+" pathogen installation - handles all the plugins
 call pathogen#incubate()
 
 call pathogen#helptags()
@@ -97,7 +97,7 @@ cno jj <c-c>
 " map leader to ,
 let mapleader=","
 " ==================================================
-" Python-mode lint overrules:
+
 "
 " ==================================================
 
@@ -110,9 +110,14 @@ let g:pymode_lint_ignore = "W0611"
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 map <F3> :NERDTreeToggle<CR>
 
-" ==================================================
-" Omni Completion
-" ==================================================
+" ====================================================
+" NERDCommenter
+" ====================================================
+" map comment toggle to F7
+map <F7> <leader>ci
+"==================================================
+"Omni Completion
+"==================================================
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
