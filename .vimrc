@@ -234,6 +234,13 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 noremap <F4> :set hlsearch! hlsearch?<CR>
+"
+" ==================================================
+" undo tree visual navigation navigation
+" ==================================================
+
+noremap <F5> :GundoToggle<CR>
+
 " ==================================================
 " Window navigation
 " ==================================================
