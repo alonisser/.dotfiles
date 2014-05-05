@@ -1,6 +1,13 @@
 alias ack=ack-grep
 export WEBIDE_JDK=/opt/java
 export PYCHARM_JDK=/opt/java
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+if [ -d /usr/bin/ec2 ]; then
+  export EC2_HOME=/usr/bin/ec2
+  export PATH=$PATH:$EC2_HOME
+
+fi
+
 
 # ps a process by name
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
