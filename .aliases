@@ -4,7 +4,7 @@ export PYCHARM_JDK=/opt/java
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
 if [ -d /usr/bin/ec2 ]; then
   export EC2_HOME=/usr/bin/ec2
-  export PATH=$PATH:$EC2_HOME
+  export PATH=$PATH:$EC2_HOME/bin
 
 fi
 

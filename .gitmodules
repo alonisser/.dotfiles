@@ -101,3 +101,9 @@
 [submodule "/home/alon/.vim/bundle/gundo"]
 	path = /home/alon/.vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule ".vim/bundle/vim-supervisor"]
+	path = .vim/bundle/vim-supervisor
+	url = git@github.com:thiderman/vim-supervisor.git
+[submodule ".vim/bundle/nginx.vim"]
+	path = .vim/bundle/nginx.vim
+	url = git@github.com:vim-scripts/nginx.vim.git

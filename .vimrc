@@ -242,6 +242,11 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 noremap <F5> :GundoToggle<CR>
 
 " ==================================================
+" nginx config 
+" ==================================================
+autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
+
+" ==================================================
 " Window navigation
 " ==================================================
 
