@@ -91,3 +91,6 @@ create_sample_files.sh
 .gnupg
 .synaptic
 .FBReader/
+.vim/plugin/
+.vim/doc/
+.ipython/

@@ -107,3 +107,6 @@
 [submodule ".vim/bundle/nginx.vim"]
 	path = .vim/bundle/nginx.vim
 	url = git@github.com:vim-scripts/nginx.vim.git
+[submodule ".vim/bundle/bash-support.vim"]
+	path = .vim/bundle/bash-support.vim
+	url = git@github.com:vim-scripts/bash-support.vim.git
