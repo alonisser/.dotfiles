@@ -14,10 +14,10 @@
 
 set nocompatible
 " pathogen installation - handles all the plugins
-call pathogen#incubate()
+"call pathogen#incubate()
 
+execute pathogen#infect()
 call pathogen#helptags()
-" execute pathogen#infect()
 colorscheme base16-default
 set background=dark
 
@@ -242,9 +242,17 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 noremap <F5> :GundoToggle<CR>
 
 " ==================================================
-" nginx config 
+" nginx syntax config 
 " ==================================================
 autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
+
+" ==================================================
+" bash ide config 
+" ==================================================
+let g:BASH_AuthorName   = 'Alonisser'
+" ==================================================
+" nginx syntax config 
+" ==================================================
 
 " ==================================================
 " Window navigation
@@ -288,7 +296,12 @@ map . <C-W><
 " F2 close current split (window)
 noremap <F2> <Esc>:close<CR><Esc>
 
+" ==================================================
+" Line numbering setup and shortcuts
+" ==================================================
+set norelativenumber
 
+map <F10> :set rnu!<CR>
 " ==================================================
 " Right-to-Left (Hebrew etc) shortcuts
 " ==================================================
