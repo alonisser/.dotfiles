@@ -8,6 +8,7 @@ if [ -d /usr/bin/ec2 ]; then
 
 fi
 
+export EDITOR=/usr/bin/vim
 
 # ps a process by name
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
