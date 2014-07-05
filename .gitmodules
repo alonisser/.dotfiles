@@ -110,3 +110,6 @@
 [submodule ".vim/bundle/bash-support.vim"]
 	path = .vim/bundle/bash-support.vim
 	url = git@github.com:vim-scripts/bash-support.vim.git
+[submodule ".vim/bundle/vim-go"]
+	path = .vim/bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
