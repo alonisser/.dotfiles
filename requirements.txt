@@ -1,0 +1,12 @@
+Fabric==1.8.3
+Powerline==beta
+PySensors==0.0.2
+boto==2.32.1
+cuisine==0.7.1
+ec2-ssh==1.2.1
+ipdb==0.8
+ipython==2.0.0
+ngxtop==0.0.2
+virtualenv==1.11.4
+virtualenvwrapper==4.2
+httpie==0.8.0
