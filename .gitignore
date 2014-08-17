@@ -94,3 +94,4 @@ create_sample_files.sh
 .vim/plugin/
 .vim/doc/
 .ipython/
+stoxswamp
