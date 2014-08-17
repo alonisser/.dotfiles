@@ -2,6 +2,7 @@
 " URL: http://vim.wikia.com/wiki/Example_vimrc
 " plus meir krihali dotvim
 " https://github.com/MeirKriheli/dotvim/blob/master/vimrc
+" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 "------------------------------------------------------------
 " Features {{{1
 "
@@ -97,8 +98,29 @@ cno jj <c-c>
 " map leader to ,
 let mapleader=","
 " ==================================================
+" leader shortcut mappings:
+" Save file with <leader> w
+nnoremap <LEADER>w :w<CR>
 
-"
+" Open file with <leader> o
+nnoremap <LEADER>o :CtrlP<CR>
+" Copy and paste to system clip board with <LEADER>p and <LEADER>y
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+" ==================================================
+" stop that stupid window from popping up when trying to quit
+map q: :q
+" map enter to end of file (or file line) and backspace for beggining
+nnoremap <CR> G
+nnoremap <BS> gg
+" Automatically jumpt to the end of pasted text
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 " ==================================================
 
 let g:pymode_lint_ignore = "W0611"
@@ -137,7 +159,8 @@ let g:SuperTabDefaultCompletionType = "context"
 
 set wildignore+=*.so,*.swp,*.zip,*.pyc,*.pyo
 let g:ctrlp_custom_ignore = 'node_modules\|bower_components'
-
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_use_caching = 0
 " ==================================================
 " Ack
 " ==================================================
@@ -323,4 +346,7 @@ if filereadable(expand("~/.vim/vimrc.local"))
     source ~/.vim/vimrc.local
 endif
 "------------------------------------------------------------
+" utf hebrew
 
+:set encoding=utf-8
+:set fileencodings=utf-8
