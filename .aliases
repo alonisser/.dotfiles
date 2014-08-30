@@ -18,3 +18,6 @@ alias mkdir="mkdir -pv"
 
 # use history with grep for a complex history command search
 alias histg="history | grep"
+
+# server currect folder as web app in specified port (or default)
+alias serve="python -m SimpleHTTPServer"
