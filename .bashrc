@@ -133,3 +133,75 @@ alias cd..="cd .."
 # added by travis gem
 [ -f /home/alon/.travis/travis.sh ] && source /home/alon/.travis/travis.sh
 
+export PATH="$HOME/.pyenv/bin:$PATH"
+echo eval "$(pyenv init -)" >> ~/.bashrc
+eval export PYENV_SHELL=zsh
+source '/home/alon/.pyenv/libexec/../completions/pyenv.zsh'
+pyenv rehash 2>/dev/null
+pyenv() {
+  local command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell|virtualenvwrapper|virtualenvwrapper_lazy)
+    eval "`pyenv "sh-$command" "$@"`";;
+  *)
+    command pyenv "$command" "$@";;
+  esac
+}
+eval export PYENV_SHELL=bash
+source '/home/alon/.pyenv/libexec/../completions/pyenv.bash'
+pyenv rehash 2>/dev/null
+pyenv() {
+  local command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell|virtualenvwrapper|virtualenvwrapper_lazy)
+    eval "`pyenv "sh-$command" "$@"`";;
+  *)
+    command pyenv "$command" "$@";;
+  esac
+}
+PATH=$PATH:$HOME/bin
+MANPATH=$MANPATH:$HOME/share/man
+eval export PYENV_SHELL=zsh
+source '/home/alon/.pyenv/libexec/../completions/pyenv.zsh'
+pyenv rehash 2>/dev/null
+pyenv() {
+  local command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  activate|deactivate|rehash|shell|virtualenvwrapper|virtualenvwrapper_lazy)
+    eval "`pyenv "sh-$command" "$@"`";;
+  *)
+    command pyenv "$command" "$@";;
+  esac
+}
+eval export PYENV_SHELL=bash
+source '/home/alon/.pyenv/libexec/../completions/pyenv.bash'
+pyenv rehash 2>/dev/null
+pyenv() {
+  local command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  activate|deactivate|rehash|shell|virtualenvwrapper|virtualenvwrapper_lazy)
+    eval "`pyenv "sh-$command" "$@"`";;
+  *)
+    command pyenv "$command" "$@";;
+  esac
+}

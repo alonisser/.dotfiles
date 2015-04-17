@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bower celery command-not-found coffee custom-aliases debian django fabric gem git-flow nyan npm redis-cli rvm sublime vagrant  web-search common-aliases virtualenvwrapper pip pep8 cp gitignore python supervisor vim-interaction tmux tmuxinator git-flow postgres)
+plugins=(git bower celery command-not-found coffee custom-aliases debian django fabric gem git-flow nyan npm redis-cli rvm sublime vagrant  web-search common-aliases virtualenvwrapper pip pep8 cp python vim-interaction jira gitignore)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,3 +81,5 @@ eval "$(pyenv init -)"
 
 export NVM_DIR="/home/alon/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export TMPDIR=~/tmp 

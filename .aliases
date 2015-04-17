@@ -1,7 +1,9 @@
 alias ack=ack-grep
 export WEBIDE_JDK=/opt/java
 export PYCHARM_JDK=/opt/java
+export IDEA_JDK=/usr/lib/jvm/java-8-oracle
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+export JAVA8_HOME=/usr/lib/jvm/java-8-oracle
 if [ -d /usr/bin/ec2 ]; then
   export EC2_HOME=/usr/bin/ec2
   export PATH=$PATH:$EC2_HOME/bin
@@ -21,3 +23,4 @@ alias histg="history | grep"
 
 # server currect folder as web app in specified port (or default)
 alias serve="python -m SimpleHTTPServer"
+alias cd..="cd .."

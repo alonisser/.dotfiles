@@ -132,6 +132,11 @@ let g:pymode_lint_ignore = "W0611"
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 map <F3> :NERDTreeToggle<CR>
 
+" Open nerd tree if no other file was opened
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Close vim if only nerd tree remained open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " ====================================================
 " NERDCommenter
 " ====================================================

@@ -1,0 +1,14 @@
+[user]
+	name = alonisser
+	email = alonisser@gmail.com
+[credential]
+	helper = cache --timeout=3600
+[color]
+	sh = auto
+[push]
+	default = upstream
+[alias]
+	pr = pull --rebase
+        lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
+        ready = rebase -i @{u}
+
