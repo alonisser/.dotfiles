@@ -95,3 +95,11 @@ create_sample_files.sh
 .vim/doc/
 .ipython/
 stoxswamp
+*.csv 
+*.png
+*.zip
+*.tar
+*.tar.gz
+*.pem
+
+
