@@ -20,7 +20,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
+HISTSIZE=2000
 HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
@@ -98,9 +98,6 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
-
-
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -112,81 +109,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-### Added by the Heroku Toolbelt
-
-
-source /usr/local/bin/virtualenvwrapper_lazy.sh
-
-export export RBENV_ROOT="/usr/local/rbenv"
-export export PATH="$RBENV_ROOT/bin:$PATH"
-eval "$(rbenv init -)"
-
-#my stuff
-
-pyenv() {
-  local command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  rehash|shell|virtualenvwrapper|virtualenvwrapper_lazy)
-    eval "`pyenv "sh-$command" "$@"`";;
-  *)
-    command pyenv "$command" "$@";;
-  esac
-}
-eval export PYENV_SHELL=bash
-source '/home/alon/.pyenv/libexec/../completions/pyenv.bash'
-pyenv rehash 2>/dev/null
-pyenv() {
-  local command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  rehash|shell|virtualenvwrapper|virtualenvwrapper_lazy)
-    eval "`pyenv "sh-$command" "$@"`";;
-  *)
-    command pyenv "$command" "$@";;
-  esac
-}
-PATH=$PATH:$HOME/bin
-MANPATH=$MANPATH:$HOME/share/man
-eval export PYENV_SHELL=zsh
-source '/home/alon/.pyenv/libexec/../completions/pyenv.zsh'
-pyenv rehash 2>/dev/null
-pyenv() {
-  local command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  activate|deactivate|rehash|shell|virtualenvwrapper|virtualenvwrapper_lazy)
-    eval "`pyenv "sh-$command" "$@"`";;
-  *)
-    command pyenv "$command" "$@";;
-  esac
-}
-eval export PYENV_SHELL=bash
-source '/home/alon/.pyenv/libexec/../completions/pyenv.bash'
-pyenv rehash 2>/dev/null
-pyenv() {
-  local command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  activate|deactivate|rehash|shell|virtualenvwrapper|virtualenvwrapper_lazy)
-    eval "`pyenv "sh-$command" "$@"`";;
-  *)
-    command pyenv "$command" "$@";;
-  esac
-}
+. ~/.localrc

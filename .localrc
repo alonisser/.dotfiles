@@ -1,0 +1,25 @@
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+eval export PYENV_SHELL=zsh
+source '/home/alon/.pyenv/libexec/../completions/pyenv.zsh'
+pyenv rehash 2>/dev/null
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/server
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
+
+export NVM_DIR="/home/alon/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+if [ -f ~/.workstuff ]; then
+    . ~/.workstuff
+fi
+
+
+
