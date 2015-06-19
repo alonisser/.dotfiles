@@ -23,4 +23,4 @@ alias histg="history | grep"
 
 # server currect folder as web app in specified port (or default)
 alias serve="python -m SimpleHTTPServer"
-alias cd..="cd .."
+#alias cd..="cd .."
