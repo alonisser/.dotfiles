@@ -67,19 +67,10 @@ export PATH="/usr/local/rbenv/shims:/usr/local/rbenv/bin:/home/alon/.pyenv/shims
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-source ~/.aliases
-source ~/.workstuff
- 
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/Projects/learngo
-export PATH=$PATH:/$GOPATH/bin
-
 export export PYENV_ROOT="$HOME/.pyenv"
 export export PATH="$PYENV_ROOT/bin:$PATH"
 
-eval "$(pyenv init -)"
 
-export NVM_DIR="/home/alon/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export TMPDIR=~/tmp 
+source ~/.localrc
