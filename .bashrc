@@ -3,6 +3,10 @@
 # for examples
 
 # If not running interactively, don't do anything
+if [ -f ~/.localrc ]; then
+    . ~/.localrc
+fi
+
 case $- in
     *i*) ;;
       *) return;;
@@ -95,13 +99,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Alias definitions.
 
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
 
-if [ -f ~/.workstuff ]; then
-    . ~/.workstuff
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -115,29 +113,16 @@ if ! shopt -oq posix; then
 fi
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Projects
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+
+
 source /usr/local/bin/virtualenvwrapper_lazy.sh
-export export PYENV_ROOT="$HOME/.pyenv"
-export export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+
 export export RBENV_ROOT="/usr/local/rbenv"
 export export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"
 
 #my stuff
-alias cd..="cd .."
 
-# added by travis gem
-[ -f /home/alon/.travis/travis.sh ] && source /home/alon/.travis/travis.sh
-
-export PATH="$HOME/.pyenv/bin:$PATH"
-echo eval "$(pyenv init -)" >> ~/.bashrc
-eval export PYENV_SHELL=zsh
-source '/home/alon/.pyenv/libexec/../completions/pyenv.zsh'
-pyenv rehash 2>/dev/null
 pyenv() {
   local command
   command="$1"
