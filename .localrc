@@ -2,7 +2,7 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval export PYENV_SHELL=zsh
-source '/home/alon/.pyenv/libexec/../completions/pyenv.zsh'
+source .pyenv/completions/pyenv.zsh
 pyenv rehash 2>/dev/null
 
 export WORKON_HOME=$HOME/.virtualenvs
