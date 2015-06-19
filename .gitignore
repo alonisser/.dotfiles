@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .ICEauthority
 .Private
 .VirtualBox/
@@ -30,7 +31,6 @@ charles.config
 .mozilla/
 .netrc
 .node-gyp/
-.npm/
 .pip/
 .pki/
 .pyenv/
@@ -102,4 +102,36 @@ stoxswamp
 *.tar.gz
 *.pem
 
-
+.workstuff
+.xsession-errors
+server
+.npm
+.nvm
+.oh-my-zsh
+.pyenv
+.ssh
+.unison
+.node-gyp
+.macromedia
+.pki
+.virtualenvs
+.zcompdump
+.mozilla
+27b03dbf4fb7c4.crt gd_bundle-g2-g1.crt
+*.crt
+examples.desktop
+.zsh-update
+.lesshst
+.histfile
+.gnome
+.gconf
+.cache
+.compiz
+.dmrc
+.bash_history
+.ICEauthority
+.zsh_history
+.Xauthority
+.local
+.viminfo
+.config
